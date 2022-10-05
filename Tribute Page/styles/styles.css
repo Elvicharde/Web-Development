@@ -37,10 +37,15 @@ header{
   background: white;
 }
 
+img{
+  display: block;
+}
+
 #image{
   width: 80%;
   height: auto;
-  margin: 0 120px;
+  max-width: 100%;
+  margin: auto;
 }
 
 #img-caption{
