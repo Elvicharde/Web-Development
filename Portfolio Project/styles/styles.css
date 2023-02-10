@@ -1,0 +1,340 @@
+:root{
+    --bg-color-red: #be3144;
+    --bg-color-white: #f0f0f0;
+    --bg-color-blue: #45567d;
+    --bg-color-gray: #303841;
+    --major-font: Raleway, sans-serif;
+    --alternate-font: poppins, sans-serif;
+  }
+  
+  *,
+  *::before,
+  *::after{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html{
+    font-size: 10px;
+    scroll-behavior: smooth;
+    font-family: var(--major-font);
+  }
+  
+  body{
+    width: 100%;
+    font-size: 1.6rem;
+  }
+  
+  body > header{
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    height: 10vh;
+    width: 100%;
+    background-color: var(--bg-color-red);
+    border-bottom: 2px solid var(--bg-color-gray);
+  }
+  
+  #navbar{
+    width: 30%;
+    float: right;
+  }
+  
+  #navbar > #link-items{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+    float: right;
+    margin-right: 2.5rem;
+    height: 100%;
+  }
+  
+  #navbar .link-item{
+    padding: 20px;
+    height: 100%;
+    text-decoration: none;
+    color: var(--bg-color-white);
+    font-weight: bold;
+  }
+  
+  #navbar .link-item:hover{
+    background-color: var(--bg-color-blue);
+  }
+  
+  .medium-text{
+    font-size: 2rem;
+  }
+  
+  #welcome-section{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    margin-top: 10vh;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+    text-align: center;
+  }
+  
+  #welcome-section h1{
+    color: var(--bg-color-white);
+  }
+  
+  #welcome-section p{
+    color: var(--bg-color-red);
+    font-size: 2.5rem;
+  }
+  
+  .main-large-text{
+    font-size: 4.7rem;
+    line-height: 1.7;
+    font-weight: 900;
+  }
+  
+  .large-text{
+    font-size: 3.7rem;
+    font-weight: 700;
+    line-height: 1.65;
+  }
+  
+  section[id = projects]{
+    background-color: var(--bg-color-blue);
+    height: 195vh;
+    }
+  
+  section[id = projects] > h2{
+    text-align: center;
+    padding-top: 13vh;
+    color: var(--bg-color-white);
+    border-bottom: 1px solid var(--bg-color-white);
+    margin-bottom: 50px;
+  }
+  
+  #projects-gallery{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+  }
+  
+  #projects-gallery a{
+    margin: 0px 0px 70px;
+    text-decoration: none;
+    text-align: center;
+    width: calc(100% / 3.4);
+  }
+  
+  #projects-gallery figure{
+    background-color: var(--bg-color-gray);
+    border-radius: 3px;
+    color: var(--bg-color-white);
+    padding-bottom: 1px;
+    }
+  
+  img{
+    height: 90%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  figcaption, 
+  button{
+    font-size: 2.2rem;
+    font-weight: bold;
+    }
+  
+  figcaption{
+    margin: 20px;
+  }
+  
+  figcaption::before{
+    visibility: hidden;
+    content : "< ";
+    color: var(--bg-color-white);
+  }
+  
+  figcaption::after{
+    visibility: hidden;
+    content : " / > ";
+    color: var(--bg-color-white);
+  }
+  
+  #projects-gallery figure:hover{
+    background-color: black;
+    border-radius: 3px;
+    color: aqua;
+    transition: background 0.5s ease-out;
+  }
+  
+  #projects-gallery figure:hover > figcaption::before{
+    visibility: visible;
+  }
+  
+  #projects-gallery figure:hover > figcaption::after{
+    visibility: visible;
+    transition: background 0.3s ease-out;
+  }
+  
+  #button-link{
+    margin: 0px 45%; 
+  }
+  
+  button{
+    background: var(--bg-color-gray);
+    width: 150px;
+    height: 50px;
+    border: none;
+    color: var(--bg-color-white);
+    cursor: pointer;
+  }
+  
+  button .icon{
+    display: inline-block;
+    font-size: 2.4rem; 
+  }
+  
+  button:hover{
+    background: var(--bg-color-red);
+  }
+  
+  button:hover > .icon{
+    padding-left: 5px;
+    transition: padding 0.5s ease-out;
+  }
+  
+  #contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background: var(--bg-color-gray);
+    color: white;
+    text-align: center;
+    border-bottom: 5px solid var(--bg-color-red);
+  }
+  
+  #contact header{
+    padding-bottom: 40px;
+  }
+  
+  #contact em{
+    font-family: var(--alternate-font);
+  }
+  
+  #contact #social-profiles{
+    display: block; 
+  }
+  
+  .social-link,
+  #profile-link {
+    display: inline-block;
+    font-size: 1.4em;
+    margin-right: 20px;
+    text-decoration: none;
+    color: var(--bg-color-white);
+    font-family: "Font Awesome 5 Brands";
+  }
+  
+  #social-profiles *:hover{
+    color: aqua;
+  }
+  
+  footer{
+    background-color: var(--bg-color-gray);
+    height: 20vh;
+    color: var(--bg-color-white);
+  }
+  
+  #footer{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-content: center;
+  }
+  
+  #copyright,
+  #disclaimer{
+    padding-top: 5%;
+  }
+  
+  #footer > #copyright a{
+    text-decoration: none;
+  }
+  
+  
+  /*Responsiveness part*/
+  
+  @media all and (max-width: 900px){
+    /*Resize the gallery*/
+    section[id="projects"]{
+      height: auto;
+    }
+    
+    #projects-gallery{
+      display: flex;
+      flex-direction: row wrap;
+      justify-content: space-evenly;
+    }
+  
+    #projects-gallery a{
+      margin: 0px 25px 10%;
+      text-decoration: none;
+      text-align: center;
+      min-height: 30%;
+      max-height: 40%;
+      flex: 1 1 350px;
+    }
+  
+    #button-link{
+      margin: 0px 40.5%; 
+    }
+  
+    #footer{
+      flex-flow: row wrap;
+      justify-content: space-evenly;
+      align-content: flex-start;
+      height: 100%;
+      width: 95%;
+      margin: auto;
+    }
+  
+    #disclaimer{
+      display: block;
+      width: 40%;
+    }
+  }
+  
+  @media all and (max-width: 740px){
+    /*Resize the gallery*/
+    section[id="projects"]{
+      height: auto;
+    }    
+    
+    #projects-gallery{
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-around;
+    }
+  
+    #projects-gallery a{
+      margin: 0px auto 15%;
+      text-decoration: none;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+  
+    #button-link{
+      margin: 0px 17em; 
+    }
+  
+    #disclaimer{
+      display: block;
+      width: 100%;
+    }
+  }
