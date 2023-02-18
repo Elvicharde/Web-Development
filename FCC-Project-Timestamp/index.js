@@ -27,7 +27,10 @@ app.get("/api/hello", function (req, res) {
 
 
 // endpoint for posting date 
-app.get("/api/:date/", Handler).post("/api/:date/", Handler)
+app.get("/api/:date/", Handler).post("/api/:date/", Handler);
+
+//endpoint for handling no input as well
+app.get("/api", Handler2).post("/api", Handler2);
 
 function Handler(req, res){
   let date = req.params.date;
@@ -55,6 +58,12 @@ function Handler(req, res){
   let respObj = {"unix":`${unixTime}`, "utc":`${utcDate.toUTCString()}`}
   res.json(respObj);
 };
+
+function Handler2(_, res){
+  let currTime = new Date().toLocaleTimeString();
+  return res.json({"unix":`${currTime}`, "utc":`${currTime}`})
+}
+
 
 PORT = process.env.PORT || 3000
 
