@@ -35,12 +35,6 @@ app.get("/api", Handler2).post("/api", Handler2);
 function Handler(req, res){
   let date = req.params.date;
 
-  // Date validation: empty date -> regex test for non-space characters
-  if (! /\S/.test(date)){
-    let currTime = new Date().toLocaleTimeString();
-    return res.json({"unix":`${currTime}`, "utc":`${currTime}`})
-  } 
-
   // for non empty dates
   if (!/-/.test(date)){
     date = +date    // converting to integer if date is in unix timestamp format
@@ -55,13 +49,13 @@ function Handler(req, res){
 
 // Otherwise
   let unixTime = Date.parse(utcDate);
-  let respObj = {"unix":`${unixTime}`, "utc":`${utcDate.toUTCString()}`}
+  let respObj = {"unix":+`${unixTime}`, "utc":`${utcDate.toUTCString()}`}
   res.json(respObj);
 };
 
 function Handler2(_, res){
-  let currTime = new Date().toLocaleTimeString();
-  return res.json({"unix":`${currTime}`, "utc":`${currTime}`})
+  let currTime = new Date();
+  res.json({"unix":+`${Date.parse(currTime)}`, "utc":`${currTime.toUTCString()}`})
 }
 
 
